@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Stat Tracker",
+  "short_name": "Stat Tracker",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
