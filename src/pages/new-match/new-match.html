@@ -10,7 +10,7 @@
 
 	<ion-list radio-group>
 		<ion-list-header>
-			Result
+			Match Details
 		</ion-list-header>
 
 		<ion-item>
@@ -27,81 +27,52 @@
 			<ion-label>Tie</ion-label>
 			<ion-radio value="T"></ion-radio>
 		</ion-item>
-	</ion-list>
 
-	<ion-list>
 		<ion-item>
 			<ion-label>Map</ion-label>
 			<ion-select [(ngModel)]="map">
-				<ion-option value="nes">NES</ion-option>
-				<ion-option value="n64">Nintendo64</ion-option>
-				<ion-option value="ps">PlayStation</ion-option>
-				<ion-option value="genesis">Sega Genesis</ion-option>
-				<ion-option value="saturn">Sega Saturn</ion-option>
-				<ion-option value="snes">SNES</ion-option>
+				<ion-option *ngFor="let map of maps" value="{{map.Value}}">
+					{{map.Name}}
+				</ion-option>
 			</ion-select>
 		</ion-item>
-	</ion-list>
 
-	<ion-list>
 		<ion-item>
 			<ion-label>Mode</ion-label>
 			<ion-select [(ngModel)]="mode">
-				<ion-option value="cm">Cage Match</ion-option>
-				<ion-option value="dom">Domination</ion-option>
-				<ion-option value="ffa">Free For All</ion-option>
-				<ion-option value="gw">Ground War</ion-option>
-				<ion-option value="hq">Headquarters</ion-option>
-				<ion-option value="mtdm">Mercenary Team Deathmatch</ion-option>
-				<ion-option value="sab">Sabotage</ion-option>
-				<ion-option value="hp">Hardpoint</ion-option>
-				<ion-option value="snd">Search & Destroy</ion-option>
-				<ion-option value="tdm">Team Deathmatch</ion-option>
+				<ion-option *ngFor="let mode of modes" value="{{mode.Value}}">
+					{{mode.Name}}
+				</ion-option>
 			</ion-select>
 		</ion-item>
-	</ion-list>
-
-	<ion-grid>
-		<ion-row>
-			<ion-col col-4>
-				<ion-item>
-					<ion-label floating>Kills</ion-label>
-					<ion-input type="number"></ion-input>
-				</ion-item>
-			</ion-col>
-			<ion-col col-4>
-				<ion-item>
-					<ion-label floating>Deaths</ion-label>
-					<ion-input type="number"></ion-input>
-				</ion-item>
-			</ion-col>
-			<ion-col col-4>
-				<ion-item>
-					<ion-label floating>Assists</ion-label>
-					<ion-input type="number"></ion-input>
-				</ion-item>
-			</ion-col>
-		</ion-row>
-	</ion-grid>
-
-	<ion-list>
 
 		<ion-item>
-			<ion-label floating>Round Wins</ion-label>
+			<ion-label>Kills</ion-label>
 			<ion-input type="number"></ion-input>
 		</ion-item>
 
 		<ion-item>
-			<ion-label floating>Round Losses</ion-label>
+			<ion-label>Deaths</ion-label>
 			<ion-input type="number"></ion-input>
 		</ion-item>
 
-	</ion-list>
-
-	<ion-list>
+		<ion-item>
+			<ion-label>Assists</ion-label>
+			<ion-input type="number"></ion-input>
+		</ion-item>
 
 		<ion-item>
-			<ion-label floating>Date</ion-label>
+			<ion-label>Round Wins</ion-label>
+			<ion-input type="number"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Round Losses</ion-label>
+			<ion-input type="number"></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>Date</ion-label>
 			<ion-input type="date"></ion-input>
 		</ion-item>
 

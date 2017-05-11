@@ -1,11 +1,41 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Profile
-    </ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>
+			Profile
+		</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  Profile Page
+	<ion-segment [(ngModel)]="profileTab">
+		<ion-segment-button value="totals">
+			Totals
+		</ion-segment-button>
+		<ion-segment-button value="games">
+			Games
+		</ion-segment-button>
+		<ion-segment-button value="charts">
+			Charts
+		</ion-segment-button>
+	</ion-segment>
+
+
+	<div [ngSwitch]="profileTab">
+		<ion-list *ngSwitchCase="'totals'">
+			<button ion-button (click)="dismiss()">Dismiss</button>
+		</ion-list>
+
+		<ion-list *ngSwitchCase="'games'">
+			<ion-list>
+				<button ion-item>
+				06/07/2017 W
+			</button>
+			</ion-list>
+		</ion-list>
+
+		<ion-list *ngSwitchCase="'charts'">
+
+		</ion-list>
+	</div>
+
 </ion-content>

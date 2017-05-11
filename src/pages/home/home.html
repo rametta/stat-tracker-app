@@ -1,12 +1,41 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+	<ion-navbar>
+		<ion-title>Home</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Leaderboards</h2>
-  <p>
-    Leaderboards will go here
-  </p>
+	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+	<ion-list>
+		<ion-list-header>
+			Profiles
+		</ion-list-header>
+
+		<ion-item (click)="showProfileModal()">
+			<ion-avatar item-left>
+				<img src="http://pbs.twimg.com/profile_images/804806890974756865/FG_VwiDo_normal.jpg">
+			</ion-avatar>
+			<h2>VeeMerk</h2>
+			<p>KD: 1.23</p>
+		</ion-item>
+
+		<ion-item (click)="showProfileModal()">
+			<ion-avatar item-left>
+				<img src="http://pbs.twimg.com/profile_images/488346609215078400/DwT5OcHi_normal.jpeg">
+			</ion-avatar>
+			<h2>EhLouis</h2>
+			<p>KD: 2.11</p>
+		</ion-item>
+
+		<ion-item (click)="showProfileModal()">
+			<ion-avatar item-left>
+				<img src="http://pbs.twimg.com/profile_images/489774237461123072/WBa62hi0_normal.png">
+			</ion-avatar>
+			<h2>Cryonical</h2>
+			<p>KD: 1.19</p>
+		</ion-item>
+
+	</ion-list>
+
 </ion-content>
