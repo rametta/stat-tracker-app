@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ViewController } from 'ionic-angular';
 
 @Component({
 	selector: 'page-new-match',
@@ -117,6 +118,46 @@ export class NewMatchPage {
 		}
 	]
 
-	constructor(public navCtrl: NavController) { }
+	outcome: string;
+	wins: number;
+	losses: number;
+	kills: number;
+	deaths: number;
+	assists: number;
+	date: string;
+	mode: string;
+	map: string;
+
+	constructor(public navCtrl: NavController, public viewCtrl: ViewController) { 
+		this.reset();
+	}
+
+	cancel() {
+		this.viewCtrl.dismiss();
+	}
+
+	reset() {
+		this.outcome = 'W';
+		this.wins = 0;
+		this.losses = 0;
+		this.kills = 0;
+		this.deaths = 0;
+		this.assists = 0;
+		this.date = new Date().toISOString();
+		this.mode = '';
+		this.map = ''
+	}
+
+	addMatch() {
+		console.log(this.outcome);
+		console.log(this.wins);
+		console.log(this.losses);
+		console.log(this.kills);
+		console.log(this.deaths);
+		console.log(this.assists);
+		console.log(this.date);
+		console.log(this.map);
+		console.log(this.mode);
+	}
 
 }

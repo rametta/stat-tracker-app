@@ -8,11 +8,12 @@
 
 <ion-content padding>
 
-	<ion-list radio-group>
+	<ion-list>
 		<ion-list-header>
 			Match Details
 		</ion-list-header>
 
+<div radio-group [(ngModel)]="outcome">
 		<ion-item>
 			<ion-label>Win</ion-label>
 			<ion-radio checked="true" value="W"></ion-radio>
@@ -27,6 +28,8 @@
 			<ion-label>Tie</ion-label>
 			<ion-radio value="T"></ion-radio>
 		</ion-item>
+</div>
+
 
 		<ion-item>
 			<ion-label>Map</ion-label>
@@ -48,34 +51,37 @@
 
 		<ion-item>
 			<ion-label>Kills</ion-label>
-			<ion-input type="number"></ion-input>
+			<ion-input [(ngModel)]="kills" type="number" min="0" max="200"></ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label>Deaths</ion-label>
-			<ion-input type="number"></ion-input>
+			<ion-input [(ngModel)]="deaths" type="number" min="0" max="200"></ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label>Assists</ion-label>
-			<ion-input type="number"></ion-input>
+			<ion-input [(ngModel)]="assists" type="number" min="0" max="200"></ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label>Round Wins</ion-label>
-			<ion-input type="number"></ion-input>
+			<ion-input [(ngModel)]="wins" type="number" min="0" max="6"></ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label>Round Losses</ion-label>
-			<ion-input type="number"></ion-input>
+			<ion-input [(ngModel)]="losses" type="number" min="0" max="6"></ion-input>
 		</ion-item>
 
 		<ion-item>
 			<ion-label>Date</ion-label>
-			<ion-input type="date"></ion-input>
+			<ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="date"></ion-datetime>
 		</ion-item>
 
 	</ion-list>
+
+	<button ion-button round (click)="addMatch()">Add Match</button>
+	<button ion-button round align-right color="light" (click)="cancel()">Cancel</button>
 
 </ion-content>

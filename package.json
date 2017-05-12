@@ -1,8 +1,8 @@
 {
-    "name": "ionic-hello-world",
-    "version": "0.0.0",
-    "author": "Ionic Framework",
-    "homepage": "http://ionicframework.com/",
+    "name": "stat-tracker-app",
+    "version": "0.0.1",
+    "author": "Jason Rametta",
+    "homepage": "http://stattracker.org/",
     "private": true,
     "scripts": {
         "clean": "ionic-app-scripts clean",
@@ -50,7 +50,7 @@
         "ionic-plugin-keyboard"
     ],
     "cordovaPlatforms": [],
-    "description": "statTrackerApp: An Ionic project",
+    "description": "Stat Tracker: Easily track your game stats!",
     "cordova": {
         "plugins": {
             "cordova-plugin-console": {},
