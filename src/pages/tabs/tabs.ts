@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { NewMatchPage } from '../new-match/new-match';
+import { SettingsPage } from '../settings/settings';
 import { ProfilePage } from '../profile/profile';
 import { HomePage } from '../home/home';
 
@@ -10,8 +10,8 @@ import { HomePage } from '../home/home';
 export class TabsPage {
 
   tab1Root = HomePage;
-  tab2Root = NewMatchPage;
-  tab3Root = ProfilePage;
+  tab2Root = ProfilePage;
+  tab3Root = SettingsPage;
 
   constructor() {
 

@@ -138,14 +138,14 @@ export class NewMatchPage {
 
 	reset() {
 		this.outcome = 'W';
-		this.wins = 0;
-		this.losses = 0;
-		this.kills = 0;
-		this.deaths = 0;
-		this.assists = 0;
+		this.wins = null;
+		this.losses = null;
+		this.kills = null;
+		this.deaths = null;
+		this.assists = null;
 		this.date = new Date().toISOString();
-		this.mode = '';
-		this.map = ''
+		this.mode = this.modes[0].Value;
+		this.map = this.maps[0].Value
 	}
 
 	addMatch() {
