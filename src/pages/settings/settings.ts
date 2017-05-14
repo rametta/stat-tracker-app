@@ -11,4 +11,8 @@ export class SettingsPage {
 		public navCtrl: NavController
 		) { }
 
+		logout() {
+			
+		}
+
 }

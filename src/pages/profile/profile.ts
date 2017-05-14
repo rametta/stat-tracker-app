@@ -16,9 +16,7 @@ export class ProfilePage {
 		public navCtrl: NavController,
 		public navParams: NavParams,
 		public modalCtrl: ModalController
-	) {
-		navParams.get('userId');
-	}
+	) { }
 
 	showMatchModal() {
 		let modal = this.modalCtrl.create(NewMatchPage);
