@@ -10,19 +10,38 @@ import { NewMatchPage } from './../new-match/new-match';
 })
 export class HomePage {
 
+	users = [
+		{
+			name: 'VeeMerk',
+			photo: 'http://pbs.twimg.com/profile_images/804806890974756865/FG_VwiDo_normal.jpg',
+		},
+		{
+			name: 'GoLouis',
+			photo: 'http://pbs.twimg.com/profile_images/488346609215078400/DwT5OcHi_normal.jpeg',
+		},
+		{
+			name: 'Cryonical',
+			photo: 'http://pbs.twimg.com/profile_images/489774237461123072/WBa62hi0_normal.png',
+		},
+	]
+
+	profilePage = ProfilePage;
+	filteredUsers;
+
 	constructor(
 		public navCtrl: NavController,
 		public modalCtrl: ModalController
-	) { }
-
-	showProfileModal() {
-		let modal = this.modalCtrl.create(ProfilePage);
-		modal.present();
-	}
+	) {
+		this.filteredUsers = this.users;
+	 }
 
 	showMatchModal() {
 		let modal = this.modalCtrl.create(NewMatchPage);
 		modal.present();
+	}
+
+	filterUsers(value) {
+		this.filteredUsers = this.users.filter(u => u.name.toLowerCase().includes(value.toLowerCase()));
 	}
 
 }

@@ -5,39 +5,22 @@
 </ion-header>
 
 <ion-content padding>
-	<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+	<ion-searchbar (keyup)="filterUsers($event.target.value)"></ion-searchbar>
 
 	<ion-fab right bottom>
     <button ion-fab (click)="showMatchModal()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 
 	<ion-list>
-		<ion-list-header>
-			Profiles
-		</ion-list-header>
 
-		<ion-item (click)="go()">
+		<ion-item
+			*ngFor="let user of filteredUsers"
+			[navPush]="profilePage"
+			[navParams]="user">
 			<ion-avatar item-left>
-				<img src="http://pbs.twimg.com/profile_images/804806890974756865/FG_VwiDo_normal.jpg">
+				<img src="{{user.photo}}">
 			</ion-avatar>
-			<h2>VeeMerk</h2>
-			<p>KD: 1.23</p>
-		</ion-item>
-
-		<ion-item (click)="go()">
-			<ion-avatar item-left>
-				<img src="http://pbs.twimg.com/profile_images/488346609215078400/DwT5OcHi_normal.jpeg">
-			</ion-avatar>
-			<h2>EhLouis</h2>
-			<p>KD: 2.11</p>
-		</ion-item>
-
-		<ion-item (click)="go()">
-			<ion-avatar item-left>
-				<img src="http://pbs.twimg.com/profile_images/489774237461123072/WBa62hi0_normal.png">
-			</ion-avatar>
-			<h2>Cryonical</h2>
-			<p>KD: 1.19</p>
+			<h2>{{user.name}}</h2>
 		</ion-item>
 
 	</ion-list>
