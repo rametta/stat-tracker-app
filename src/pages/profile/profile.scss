@@ -1,3 +1,8 @@
-page-profile {
+@import '../../theme/variables';
 
+page-profile {
+	.outcome { text-transform: uppercase }
+	.w { color: map-get($colors, secondary) }
+	.l { color: map-get($colors, danger) }
+	.t { color: map-get($colors, primary) }
 }

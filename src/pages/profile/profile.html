@@ -6,13 +6,13 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 
 	<ion-fab right bottom>
-    <button ion-fab (click)="showMatchModal()"><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
+		<button ion-fab (click)="showMatchModal()"><ion-icon name="add"></ion-icon></button>
+	</ion-fab>
 
-	<ion-segment [(ngModel)]="profileTab">
+	<ion-segment padding [(ngModel)]="profileTab">
 		<ion-segment-button value="totals">
 			Totals
 		</ion-segment-button>
@@ -27,16 +27,72 @@
 
 	<div [ngSwitch]="profileTab">
 		<ion-list *ngSwitchCase="'totals'">
-			
+
 		</ion-list>
 
-		<ion-list *ngSwitchCase="'games'">
-			<ion-list>
+		<div *ngSwitchCase="'games'">
+			<ion-item-group>
+				<ion-item-divider color="light">September 4th, 2017</ion-item-divider>
 				<button ion-item>
-				06/07/2017 W
-			</button>
-			</ion-list>
-		</ion-list>
+					<h2><span class="w outcome">W</span> - Vacant</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="l outcome">L</span> - Bog</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="t outcome">T</span> - Overgrown</h2>
+					<p>2.42 KD</p>
+				</button>
+			</ion-item-group>
+			<ion-item-group>
+				<ion-item-divider color="light">September 8th, 2017</ion-item-divider>
+				<button ion-item>
+					<h2><span class="w outcome">W</span> - Vacant</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="l outcome">L</span> - Bog</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="t outcome">T</span> - Overgrown</h2>
+					<p>2.42 KD</p>
+				</button>
+			</ion-item-group>
+			<ion-item-group>
+				<ion-item-divider color="light">September 4th, 2017</ion-item-divider>
+				<button ion-item>
+					<h2><span class="w outcome">W</span> - Vacant</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="l outcome">L</span> - Bog</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="t outcome">T</span> - Overgrown</h2>
+					<p>2.42 KD</p>
+				</button>
+			</ion-item-group>
+			<ion-item-group>
+				<ion-item-divider color="light">September 4th, 2017</ion-item-divider>
+				<button ion-item>
+					<h2><span class="w outcome">W</span> - Vacant</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="l outcome">L</span> - Bog</h2>
+					<p>2.42 KD</p>
+				</button>
+				<button ion-item>
+					<h2><span class="t outcome">T</span> - Overgrown</h2>
+					<p>2.42 KD</p>
+				</button>
+			</ion-item-group>
+		</div>
+
 
 		<ion-list *ngSwitchCase="'charts'">
 

@@ -4,7 +4,7 @@
 	</ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
 	<ion-searchbar (keyup)="filterUsers($event.target.value)"></ion-searchbar>
 
 	<ion-fab right bottom>
@@ -13,7 +13,7 @@
 
 	<ion-list>
 
-		<ion-item
+		<button ion-item
 			*ngFor="let user of filteredUsers"
 			[navPush]="profilePage"
 			[navParams]="user">
@@ -21,7 +21,8 @@
 				<img src="{{user.photo}}">
 			</ion-avatar>
 			<h2>{{user.name}}</h2>
-		</ion-item>
+			<p>1.23 KD</p>
+		</button>
 
 	</ion-list>
 
