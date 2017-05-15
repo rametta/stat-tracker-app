@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { ProfilePage } from './../profile/profile';
 import { NewMatchPage } from './../new-match/new-match';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
 	selector: 'page-home',
@@ -27,12 +28,15 @@ export class HomePage {
 
 	profilePage = ProfilePage;
 	filteredUsers;
+	items: FirebaseListObservable<any[]>;
 
 	constructor(
 		public navCtrl: NavController,
-		public modalCtrl: ModalController
+		public modalCtrl: ModalController,
+		//db: AngularFireDatabase
 	) {
 		this.filteredUsers = this.users;
+		//this.items = db.list('/stats/');
 	 }
 
 	showMatchModal() {

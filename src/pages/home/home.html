@@ -25,4 +25,10 @@
 
 	</ion-list>
 
+	<ul>
+  <li class="text" *ngFor="let item of items | async">
+    {{item.user.gamertag}}
+  </li>
+</ul>
+
 </ion-content>
