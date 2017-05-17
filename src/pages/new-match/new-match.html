@@ -13,26 +13,25 @@
 		<div radio-group [(ngModel)]="outcome">
 			<ion-item>
 				<ion-label>Win</ion-label>
-				<ion-radio checked="true" value="W"></ion-radio>
+				<ion-radio checked="true" value="w"></ion-radio>
 			</ion-item>
 
 			<ion-item>
 				<ion-label>Loss</ion-label>
-				<ion-radio value="L"></ion-radio>
+				<ion-radio value="l"></ion-radio>
 			</ion-item>
 
 			<ion-item>
 				<ion-label>Tie</ion-label>
-				<ion-radio value="T"></ion-radio>
+				<ion-radio value="t"></ion-radio>
 			</ion-item>
 		</div>
-
 
 		<ion-item>
 			<ion-label>Map</ion-label>
 			<ion-select [(ngModel)]="map" interface="popover">
-				<ion-option *ngFor="let map of maps" value="{{map.Value}}">
-					{{map.Name}}
+				<ion-option *ngFor="let map of maps | async" value="{{map.$key}}">
+					{{map.name}}
 				</ion-option>
 			</ion-select>
 		</ion-item>
@@ -40,8 +39,8 @@
 		<ion-item>
 			<ion-label>Mode</ion-label>
 			<ion-select [(ngModel)]="mode" interface="popover">
-				<ion-option *ngFor="let mode of modes" value="{{mode.Value}}">
-					{{mode.Name}}
+				<ion-option *ngFor="let mode of modes | async" value="{{mode.$key}}">
+					{{mode.name}}
 				</ion-option>
 			</ion-select>
 		</ion-item>
@@ -78,7 +77,7 @@
 
 	</ion-list>
 
-	<button ion-button round (click)="addMatch()">Add Match</button>
+	<button ion-button round (click)="addMatch()">Save</button>
 	<button ion-button round align-right color="light" (click)="cancel()">Cancel</button>
 
 </ion-content>

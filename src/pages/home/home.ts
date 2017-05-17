@@ -23,9 +23,10 @@ export class HomePage {
 		{
 			name: 'Cryonical',
 			photo: 'http://pbs.twimg.com/profile_images/489774237461123072/WBa62hi0_normal.png',
-		},
+		}
 	]
 
+	filterValue: string;
 	profilePage = ProfilePage;
 	filteredUsers;
 	items: FirebaseListObservable<any[]>;
@@ -44,8 +45,8 @@ export class HomePage {
 		modal.present();
 	}
 
-	filterUsers(value) {
-		this.filteredUsers = this.users.filter(u => u.name.toLowerCase().includes(value.toLowerCase()));
+	filterUsers() {
+		this.filteredUsers = this.users.filter(u => u.name.toLowerCase().includes(this.filterValue.toLowerCase()));
 	}
 
 }

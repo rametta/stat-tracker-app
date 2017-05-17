@@ -5,7 +5,11 @@
 </ion-header>
 
 <ion-content>
-	<ion-searchbar (keyup)="filterUsers($event.target.value)"></ion-searchbar>
+	<ion-searchbar 
+		[(ngModel)]="filterValue" 
+		(ionCancel)="filterValue = ''" 
+		(ionInput)="filterUsers()">
+	</ion-searchbar>
 
 	<ion-fab right bottom>
     <button ion-fab (click)="showMatchModal()"><ion-icon name="add"></ion-icon></button>
@@ -26,10 +30,10 @@
 
 	</ion-list>
 
-	<ul>
+	<!--<ul>
   <li class="text" *ngFor="let item of items | async">
     {{item.user.gamertag}}
   </li>
-</ul>
+</ul>-->
 
 </ion-content>
